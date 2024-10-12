@@ -16,9 +16,11 @@ mongoose.connect("mongodb+srv://maestrocj48:mynativeapp2025@reactnative.j7t9p.mo
   .catch((error) => console.log('Error connecting to MongoDB:', error));
 
 
-app.listen(8080,()=>{
-  console.log("Port 8080 is live !");
+const port = process.env.PORT || 8800;
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
 });
+
 
 // register user name,email and password with dataModel Schema to mongoDB.
 app.post("/register", async (req, res) => {
